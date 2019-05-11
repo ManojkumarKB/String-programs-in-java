@@ -17,21 +17,22 @@ public class Anagram {
 		String sk="";
 		if(s.length()==k.length())
 		{
-			for(int i=0;i<k.length();i++)
+			for(int i=0;i<s.length();i++)
 			{
-				for(int j=0;j<s.length();j++)
+				for(int j=0;j<k.length();j++)
 				{
-					if(sk.contains(k.charAt(i)+"")==false)
+					if(sk.contains(s.charAt(i)+"")==false)
 					{
-					if(k.charAt(i)==s.charAt(j))
+					if(s.charAt(i)==k.charAt(j))
 					{
-						sk=sk+k.charAt(i);
+						sk=sk+s.charAt(i);
 						count=count+1;
 					}
 					}
 				}
 					sk="";
 			}
+			System.out.println(count);
 			if(count==s.length())
 				System.out.println("Its a anagram");
 			else
