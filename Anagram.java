@@ -1,4 +1,5 @@
-package com.trials.string;
+package com.trials.sample;
+
 import java.util.Scanner;
 
 public class Anagram {
@@ -13,21 +14,33 @@ public class Anagram {
 		String k=sc.next();
 		k=k.toLowerCase();
 		int count=0;
-		for(int i=0;i<k.length();i++)
+		String sk="";
+		if(s.length()==k.length())
 		{
-			for(int j=0;j<s.length();j++)
+			for(int i=0;i<k.length();i++)
 			{
-				if(k.charAt(i)==s.charAt(j))
+				for(int j=0;j<s.length();j++)
 				{
-					count=count+1;
+					if(sk.contains(k.charAt(i)+"")==false)
+					{
+					if(k.charAt(i)==s.charAt(j))
+					{
+						sk=sk+k.charAt(i);
+						count=count+1;
+					}
+					}
 				}
+					sk="";
 			}
-		}
-		if(count==s.length())
-			System.out.println("Its a anagram");
-		else
+			if(count==s.length())
+				System.out.println("Its a anagram");
+			else
 			System.out.println("Its not a anagram");
-		
+		}
+		else
+		{
+			System.out.println("Its not a anagram");
+		}
+	sc.close();
 	}
-
 }
